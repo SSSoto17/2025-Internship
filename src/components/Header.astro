@@ -1,0 +1,30 @@
+---
+
+import { Icon } from 'astro-icon/components'
+
+---
+
+<header>
+    <article>
+        <Icon name="mascot/chibi-3" />
+        <p data-heading="tagline">S. S. Soto</p>
+    </article>
+</header>
+
+<style>
+
+    header {
+        box-shadow: var(--dropshadow);
+
+        article {
+        display: flex;
+        align-items: end;
+        gap: var(--space-2xs);
+        color: var(--clr-neutral-70);
+    }
+
+    } 
+    [data-icon] {
+        width: var(--space-m);
+    }
+</style>

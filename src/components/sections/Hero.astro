@@ -1,0 +1,59 @@
+---
+
+import { Icon } from 'astro-icon/components'
+
+---
+
+<section class="full-bleed">
+    <header>
+        <div class="flow-space">
+            <h1 data-heading="title"><span>S. S.</span><br>Soto</h1>
+            <p>The <strong>S</strong> stands for...</p>
+        </div>
+        <Icon name="mascot/chibi-1" />
+    </header>
+</section>
+
+<style>
+
+    section {
+        position: relative;
+        overflow: visible;
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            place-content: center;
+            place-items: center;
+            gap: var(--space-l-xl);
+
+            h1 {
+                /* font-size: 20svw; */
+                line-height: .8;
+                /* color: oklch(from var(--clr-melon) calc(l - 0.15) calc(c + 0.04) h); */
+                span {
+                font-size: var(--type-size-3);
+            }
+            }
+
+            p {
+                text-align: right;
+                color: var(--clr-neutral-60);
+            }
+        }
+        &::after {
+            content: '';
+            width: 100svw;
+            height: 9.5rem;
+            position: absolute;
+            bottom: 0;
+            z-index: -1;
+            background: var(--powder-gradient);
+        }
+    }
+
+    [data-icon] {
+        width: clamp(3rem, 30svw, 18rem);
+    }
+
+</style>

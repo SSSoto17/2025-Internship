@@ -1,0 +1,45 @@
+---
+
+import { Icon } from 'astro-icon/components'
+const { data } = Astro.props
+
+---
+
+    <ul role="list">
+        {data.map(lang => 
+            <li>
+                <Icon name={lang.icon}  />
+                <p data-heading="tagline">{lang.language}</p>
+            </li>
+        )}
+    </ul>
+
+<style>
+
+    ul {
+        display: grid;
+        place-content: start;
+        place-self: center;
+        position: relative;
+        grid-row: 1 / -1;
+        grid-column: -1;
+        
+
+        li {
+            display: grid;
+            gap: var(--space-2xs);
+            place-items: center;
+            text-align: center;
+
+            [data-icon] {width: 2rem; color: var(--clr-melon);}
+
+            li + &::before {
+            content: '';
+            height: var(--space-m-l);
+            border: var(--border);
+            margin-block: var(--space-s) var(--space-2xs);
+        }
+        }
+    }
+
+</style>

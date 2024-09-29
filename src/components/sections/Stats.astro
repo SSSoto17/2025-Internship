@@ -1,0 +1,46 @@
+---
+
+const stats = [
+    {
+        no: "15+",
+        item: "websites coded"
+    },
+    {
+        no: "50+",
+        item: "components designed"
+    },
+    {
+        no: "250+",
+        item: "css mysteries untangled"
+    },
+    {
+        no: "10000+",
+        item: "code errors googled"
+    }
+]
+
+---
+
+<section>
+    <article>
+        <ul role="list">
+            {stats.map(data => 
+                <li>
+                    <h2 data-heading="sub-heading">{data.no}</h2>
+                    <p data-heading="tagline">{data.item}</p>
+                </li>
+            )}
+        </ul>
+    </article>
+</section>
+
+<style>
+    ul {
+        display: flex;
+        gap: var(--space-xl-2xl);
+        justify-content: center;
+        text-align: center;
+        padding: var(--space-m);
+    }
+
+</style>

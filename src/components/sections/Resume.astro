@@ -1,0 +1,63 @@
+---
+
+import Card from "../cards/ExperienceCard.astro"
+
+import { data } from "../../content/resume"
+const resume = data.toReversed()
+
+---
+
+<section id="experience">
+    {
+        resume.map(({category, items}) => (
+            <article>
+                <h2 data-heading="card-heading">{category}</h2>
+
+                <ul role="list">
+                {items.toReversed().map((props) => (
+                    <Card {...props} />
+                ))}
+                </ul>
+
+            </article>
+        ))
+    }
+
+</section>
+
+<style>
+
+    article {
+        width: min(100%, 60rem);
+        margin-inline: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 var(--space-l);
+        position: relative;
+
+        h2 {
+            flex: 1 2 200px;
+            margin-block-start: var(--space-m);
+            color: oklch(from var(--clr-matcha-green) calc(l - 0.05) calc(c + 0.05) h);
+            position: sticky;
+            top: 0;
+            bottom: 0;
+            place-self: start end;
+        }
+
+        p {
+            color: var(--clr-neutral-70);
+        }
+
+        ul {
+            flex: 1 2 600px;
+            padding: var(--space-m) var(--space-xl);
+            border-inline-start: var(--border);
+
+            li + li {
+                margin-block-start: var(--space-l);
+            }
+        }
+    }
+
+</style>

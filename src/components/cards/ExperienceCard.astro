@@ -1,0 +1,22 @@
+---
+
+const { year, role, company, desc, school, program } = Astro.props
+
+---
+
+<li class="flow-space">
+    <header>
+        <h4 data-heading="tagline">{role || program}</h4>
+        <p>{year}</p>
+        <p data-heading="tagline">{company || school}</p>
+    </header>
+    <p set:html={desc} />
+</li>
+
+<style>
+
+    li {
+        --flow-space: var(--space-xs);
+    }
+
+</style>

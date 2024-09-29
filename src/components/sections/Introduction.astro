@@ -1,0 +1,84 @@
+---
+
+import Image from "astro/components/Image.astro"
+
+import SelfPortrait from "../../assets/img/portrait.jpg"
+import * as about from "../../content/about.md"
+
+---
+
+<section>
+    <article>
+        <figure>
+            <Image src={SelfPortrait} alt="Self portrait of S. S. Soto" />
+        </figure>
+        <header class="flow-space">
+            <h2 data-heading="sub-heading">UI/UX Design and Frontend Developer</h1>
+            <p set:html={about.compiledContent()} />
+        </header>
+        <menu role="list">
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Background</a></li>
+            <!-- <li><a href="#skills">Skills</a></li> -->
+            <!-- <li><a href="#contact">Contact</a></li> -->
+        </menu>
+    </article>
+</section>
+
+<style>
+
+    article {
+        padding: var(--space-m-l);
+        border-radius: var(--space-m);
+        border: var(--border);
+        /* display: grid;
+        grid-template-columns: [full-start] repeat(auto-fit, minmax(min(50%, 380px), auto)) [full-end]; */
+        gap: var(--space-l) var(--space-l-xl);
+        box-shadow: var(--dropshadow);
+        display: flex;
+        flex-wrap: wrap;
+
+        figure {
+            flex: 200px;
+            border-radius: var(--space-m) var(--space-3xs) var(--space-3xs) var(--space-3xs);
+            overflow: hidden;
+
+            img {
+                height: 100%;
+                aspect-ratio: 1 / 1.5;
+                object-position: 50% 25%;
+                object-fit: cover;
+            }
+        }
+
+        header {
+            flex: 2 1 300px;
+            place-self: center start;
+        }
+
+        menu {
+            flex: 100%;
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            text-align: center;
+
+            > * {
+                flex: 0 1 20%;
+                display: grid;
+                place-content: center;
+                padding-inline: var(--space-3xs);
+                li + & {border-inline-start: var(--border);}
+            }
+
+            a {
+                --value: 0.04;
+                color: oklch(from var(--clr-melon) calc(l - var(--value)) calc(c + var(--value)) h);
+                font-size: var(--type-size-1);
+                font-weight: 600;
+                text-decoration: none;
+            }
+        }
+    }
+
+</style>

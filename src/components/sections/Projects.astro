@@ -1,0 +1,41 @@
+---
+
+import Image from "astro/components/Image.astro"
+
+import AssassinSetting from "../../assets/img/title_screen.webp"
+import Card from "../cards/ProjectCard.astro"
+
+const projects = await Astro.glob("../../content/projects/*.md")
+
+---
+
+<section id="projects">
+    <article class="flow-space">
+        <h2 data-heading="sub-heading">Projects</h2>
+        <ul role="list">
+            {projects.map(project => 
+                    <Card {...project.frontmatter} {project} />
+                )
+            }
+        </ul>
+    </article>
+</section>
+
+<style>
+
+    ul {
+        display: grid;
+        gap: var(--space-xl);
+
+        > :nth-child(odd) {
+            place-self: start;
+            &:hover {place-self: center;}
+        }
+
+        > :nth-child(even) {
+            place-self: end;
+            &:hover {place-self: center;}
+        }
+    }
+
+</style>

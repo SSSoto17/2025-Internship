@@ -1,0 +1,109 @@
+/* COLOR PALETTE */
+
+:root {
+  /* BRAND */
+  --clr-melon: #f3b3a6;
+  --clr-powder-blue: #d1eeeb;
+  --clr-matcha-green: #d0d9bc;
+
+  /* NEUTRALS */
+  --clr-sea-salt: #fcfbfa;
+  --clr-raisin-black: #272838;
+
+  /* GRADIENTS */
+  --matcha-gradient: linear-gradient(
+    to right,
+    var(--clr-melon),
+    var(--clr-matcha-green)
+  );
+  --powder-gradient: linear-gradient(
+    to right,
+    var(--clr-melon),
+    var(--clr-powder-blue)
+  );
+
+  /* NEUTRAL TONES */
+  --clr-neutral-10: oklch(from var(--clr-raisin-black) l c h / 3%);
+  --clr-neutral-20: oklch(from var(--clr-raisin-black) l c h / 5%);
+  --clr-neutral-30: oklch(from var(--clr-raisin-black) l c h / 10%);
+  --clr-neutral-40: oklch(from var(--clr-raisin-black) l c h / 15%);
+  --clr-neutral-50: oklch(from var(--clr-raisin-black) l c h / 25%);
+  --clr-neutral-60: oklch(from var(--clr-raisin-black) l c h / 50%);
+  --clr-neutral-70: oklch(from var(--clr-raisin-black) l c h / 75%);
+  --clr-neutral-80: oklch(from var(--clr-raisin-black) l c h / 85%);
+  --clr-neutral-90: oklch(from var(--clr-raisin-black) l c h / 90%);
+  --clr-neutral-100: oklch(from var(--clr-raisin-black) l c h / 95%);
+  --clr-neutral-110: var(--clr-raisin-black);
+
+  /* EFFECTS */
+  --dropshadow: 4px 4px 8px var(--clr-neutral-10);
+  --border: 1px solid var(--clr-neutral-20);
+}
+
+/* FONTS */
+
+:root {
+  --heading-font: "Overpass", sans-serif;
+  --copy-font: "Karla", sans-serif;
+}
+
+/* TYPE SCALE */
+
+/* :root {
+  --type-size--2: clamp(0.5002rem, 0.5808rem + -0.1041vw, 0.56rem);
+  --type-size--1: clamp(0.7rem, 0.6975rem + 0.0125vw, 0.7072rem);
+  --type-size-0: clamp(0.875rem, 0.8315rem + 0.2174vw, 1rem);
+  --type-size-1: clamp(1.0938rem, 0.9824rem + 0.557vw, 1.414rem);
+  --type-size-2: clamp(1.3672rem, 1.1473rem + 1.0995vw, 1.9994rem);
+  --type-size-3: clamp(1.709rem, 1.3201rem + 1.9446vw, 2.8271rem);
+  --type-size-4: clamp(2.1362rem, 1.4888rem + 3.2371vw, 3.9976rem);
+  --type-size-5: clamp(2.6703rem, 1.633rem + 5.1866vw, 5.6526rem);
+} */
+
+/* @link https://utopia.fyi/type/calculator?c=320,14,1.25,1240,16,1.618,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,&g=s,l,xl,12 */
+
+:root {
+  --type-size--2: clamp(0.382rem, 0.6219rem + -0.3096vw, 0.56rem);
+  --type-size--1: clamp(0.618rem, 0.7285rem + -0.1425vw, 0.7rem);
+  --type-size-0: clamp(0.875rem, 0.8315rem + 0.2174vw, 1rem);
+  --type-size-1: clamp(1.0938rem, 0.9114rem + 0.9117vw, 1.618rem);
+  --type-size-2: clamp(1.3672rem, 0.9321rem + 2.1752vw, 2.6179rem);
+  --type-size-3: clamp(1.709rem, 0.8301rem + 4.3945vw, 4.2358rem);
+  --type-size-4: clamp(2.1362rem, 0.4954rem + 8.204vw, 6.8535rem);
+  --type-size-5: clamp(2.6703rem, -0.258rem + 14.6412vw, 11.089rem);
+}
+
+/* SPACING SCALE */
+
+/* @link https://utopia.fyi/space/calculator?c=320,14,1.25,1240,16,1.5,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,&g=s,l,xl,12 */
+
+:root {
+  --space-3xs: clamp(0.25rem, 0.25rem + 0vw, 0.25rem);
+  --space-2xs: clamp(0.4375rem, 0.4158rem + 0.1087vw, 0.5rem);
+  --space-xs: clamp(0.6875rem, 0.6658rem + 0.1087vw, 0.75rem);
+  --space-s: clamp(0.875rem, 0.8315rem + 0.2174vw, 1rem);
+  --space-m: clamp(1.3125rem, 1.2473rem + 0.3261vw, 1.5rem);
+  --space-l: clamp(1.75rem, 1.663rem + 0.4348vw, 2rem);
+  --space-xl: clamp(2.625rem, 2.4946rem + 0.6522vw, 3rem);
+  --space-2xl: clamp(3.5rem, 3.3261rem + 0.8696vw, 4rem);
+  --space-3xl: clamp(5.25rem, 4.9891rem + 1.3043vw, 6rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, 0.163rem + 0.4348vw, 0.5rem);
+  --space-2xs-xs: clamp(0.4375rem, 0.3288rem + 0.5435vw, 0.75rem);
+  --space-xs-s: clamp(0.6875rem, 0.5788rem + 0.5435vw, 1rem);
+  --space-s-m: clamp(0.875rem, 0.6576rem + 1.087vw, 1.5rem);
+  --space-m-l: clamp(1.3125rem, 1.0734rem + 1.1957vw, 2rem);
+  --space-l-xl: clamp(1.75rem, 1.3152rem + 2.1739vw, 3rem);
+  --space-xl-2xl: clamp(2.625rem, 2.1467rem + 2.3913vw, 4rem);
+  --space-2xl-3xl: clamp(3.5rem, 2.6304rem + 4.3478vw, 6rem);
+}
+
+/* FLUID GRID */
+
+:root {
+  --grid-max-width: 74rem;
+  --grid-content: minmax(0, var(--grid-max-width));
+  --grid-margin: minmax(var(--space-s-m), 1fr);
+  --grid-gutter: var(--space-s-l, clamp(0.875rem, 0.3393rem + 2.6786vw, 2rem));
+}
