@@ -3,18 +3,17 @@
 import Card from "../cards/ExperienceCard.astro"
 
 import { data } from "../../content/resume"
-const resume = data.toReversed()
 
 ---
 
 <section id="experience">
     {
-        resume.map(({category, items}) => (
+        data.map(({category, items}) => (
             <article>
                 <h2 data-heading="card-heading">{category}</h2>
 
                 <ul role="list">
-                {items.toReversed().map((props) => (
+                {items.map((props) => (
                     <Card {...props} />
                 ))}
                 </ul>
