@@ -1,0 +1,77 @@
+---
+import { Icon } from 'astro-icon/components'
+import SectionLayout from "../layouts/SectionLayout.astro";
+import ProLanguages from "./ProLanguages.astro"
+
+import langSkills from "../content/skills/languages.json"
+import proLangSkills from "../content/skills/prolanguages.json"
+import softwareSkills from "../content/skills/software.json"
+
+import { data } from "../content/worktasks"
+
+---
+
+<SectionLayout>
+    <article slot="main">
+            <ProLanguages data={proLangSkills} />
+            <section class="flow-space">
+                <h3 data-heading="tagline">What can I do?</h3>
+                <ul role="list" class="flow-space">
+                    {data.map(task => <li>{task}</li>)}
+                </ul>
+            </section>
+            <section class="flow-space">
+                <h3 data-heading="tagline">Software</h3>
+                <ul role="list">
+                    {softwareSkills.map(soft => 
+                            <li>
+                                {/* <Icon name={soft.icon} /> */}
+                                {soft.software}</li>
+                        )}
+                </ul>
+            </section>
+            <section class="flow-space">
+                <h3 data-heading="tagline">Languages</h3>
+                <ul role="list">
+                    {langSkills.map(lang => 
+                            <li>{lang.language} <i>{lang.level}</i></li>
+                        )}
+                </ul>
+            </section>
+    </article>
+</SectionLayout>
+
+<style>
+
+    article {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+        grid-template-rows: repeat(2, auto);
+        gap: var(--space-l) var(--space-xl-2xl);
+        place-self: center;
+
+        section:first-of-type {
+            grid-column: 1 / -1;
+
+            li {
+                display: flex;
+                gap: var(--space-s);
+
+                &::before {
+                    content: url(../icons/check.svg);
+                    color: var(--clr-matcha-green);
+                    width: var(--type-size-0);
+                }
+            }
+        }
+
+        li {
+            --flow-space: var(--space-2xs);
+            color: var(--clr-neutral-70);
+            i {
+                color: var(--clr-neutral-60);
+                padding-inline: var(--space-s);
+            }
+        }
+    }
+</style>

@@ -1,0 +1,49 @@
+---
+import SidebarLayout from "./SidebarLayout.astro";
+import Sidebar from "../components/Sidebar.astro"
+
+---
+
+<section>
+    <SidebarLayout>
+        <slot name="sidebar">
+            <Sidebar />
+        </slot>
+    </SidebarLayout>
+    <article>
+        <slot name="main">
+            <h2>This is my main content</h2>
+        </slot>
+    </article>    
+</section>
+
+<style>
+
+    section {
+        grid-column: full-bleed;
+        display: grid;
+        grid-template-columns: subgrid;
+        place-content: start;
+
+        > article {
+            display: grid;
+            grid-template-columns: subgrid;
+            padding-block: var(--space-s-m);
+            color: var(--clr-text);
+            background: var(--clr-background);
+
+            > * {
+                grid-column: content;
+            }
+
+            &:first-child {
+                padding-inline-end: var(--space-l-xl);
+            }
+
+            &:last-child {
+                margin-inline-start: var(--space-l-xl);
+            }
+        }
+    }
+
+</style>

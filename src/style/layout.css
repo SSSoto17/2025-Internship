@@ -1,0 +1,39 @@
+body {
+  min-height: 100svh;
+
+  display: grid;
+  grid-template-columns:
+    [full-bleed-start sidebar-start] var(--grid-margin)
+    [content-start] var(--grid-content) [sidebar-end] var(--grid-content) [content-end]
+    var(--grid-margin) [full-bleed-end];
+  grid-template-rows: [header] auto [main] 1fr [footer] auto;
+
+  > *,
+  .full-bleed,
+  section[data-theme] {
+    overflow-x: clip;
+    grid-column: full-bleed;
+    display: grid;
+    grid-template-columns: subgrid;
+    place-content: start;
+
+    > *:not(&) {
+      grid-column: content;
+    }
+
+    /* > section {
+      padding: var(--space-s-m) 0;
+    } */
+  }
+
+  > header,
+  > footer {
+    padding: var(--space-xs) 0;
+  }
+}
+
+.flow-space {
+  > * + * {
+    margin-block-start: var(--flow-space, 1em);
+  }
+}

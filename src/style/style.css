@@ -1,7 +1,8 @@
-@layer reset, imports, variables, global, themes;
+@layer reset, imports, variables, layout, global, themes;
 
 @import "reset.css" layer(reset);
 @import "imports.css" layer(imports);
 @import "variables.css" layer(variables);
+@import "layout.css" layer(layout);
 @import "global.css" layer(global);
 @import "themes.css" layer(themes);

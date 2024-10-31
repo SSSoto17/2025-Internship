@@ -1,0 +1,67 @@
+---
+import Image from "astro/components/Image.astro";
+import { Icon } from "astro-icon/components";
+
+import SelfPortrait from "../assets/img/portrait.jpg"
+import * as about from "../content/about.md"
+
+---
+
+<article>
+    <figure>
+        <Image src={SelfPortrait} alt="Self portrait of S. S. Soto" />
+    </figure>
+    <header class="flow-space">
+        <h2 data-heading="sub-heading">UI/UX Design and Frontend Developer</h1>
+        <!-- <p set:html={about.compiledContent()} /> -->
+        <menu role="list">
+            <li><a href="https://github.com/SSSoto17"><Icon name="contact/github" /></a></li>
+            <li><a href="tel: +4571901756"><Icon name="contact/phone" />+45 71 90 17 56</a></li>
+            <li><a href="mailto: saso0001@stud.kea.dk"><Icon name="contact/email" />saso0001@stud.kea.dk</a></li>
+        </menu>
+    </header>
+</article>
+
+<style>
+    article {
+        display: flex;
+        flex-wrap: wrap;
+        /* gap: var(--space-l) var(--space-l-xl); */
+        place-self: center;
+        border-radius: var(--space-m);
+        overflow: hidden;
+        box-shadow: 4px 4px 4px var(--rose-bud-600);
+
+        figure {
+            flex: 200px;
+            img {
+                height: 100%;
+                aspect-ratio: 1 / 1.5;
+                object-position: 50% 25%;
+                object-fit: cover;
+            }
+
+        }
+
+        header {
+            --flow-space: var(--space-l);
+            --icon-size: 1.5rem;
+            flex: 2 1 300px;
+            place-self: center start;
+            padding: var(--space-l-xl);
+
+            menu {
+                padding-block: var(--space-s);
+                display: flex;
+                flex-wrap: wrap;
+                gap: var(--space-s);
+                align-items: center;
+                justify-content: space-evenly;
+
+                a {display: flex; gap: var(--space-2xs); align-items: center;}
+                [data-icon="contact/github"] {--icon-size: 2rem;}
+            }
+        }
+
+    }
+</style>
